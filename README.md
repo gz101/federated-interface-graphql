@@ -33,3 +33,9 @@ For the profile-service app:
 ```sh
 python -m profile_service.database.setup
 ```
+
+For the content-service app:
+
+```sh
+python -m content_service.database.setup
+```
