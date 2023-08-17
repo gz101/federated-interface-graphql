@@ -8,8 +8,17 @@ pip install -r requirements.txt
 ```
 
 ## Run the app
+
+For the profile-service app:
+
 ```sh
-uvicorn profile_service.main:app --reload
+uvicorn profile_service.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+For the content-service app:
+
+```sh
+uvicorn content_service.main:app --reload --host 127.0.0.1 --port 8001
 ```
 
 ## Clear pycache
@@ -18,6 +27,9 @@ find . | grep -E "(/__pycache__$|\.pyc$|\.pyo$)" | xargs rm -rf
 ```
 
 ## Setup database
+
+For the profile-service app:
+
 ```sh
 python -m profile_service.database.setup
 ```
