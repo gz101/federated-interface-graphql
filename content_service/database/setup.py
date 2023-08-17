@@ -1,5 +1,5 @@
 from content_service.database.config import Base, engine
-from profile_service.database.models import User, OrganizationMember
+from content_service.database.models import User
 
 def init_db():
     Base.metadata.create_all(bind=engine)
