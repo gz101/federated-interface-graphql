@@ -23,4 +23,4 @@ app.add_route("/graphql", GraphQL(schema, debug=True))
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8081)  # Make sure to use a different port than profile_service
+    uvicorn.run(app, host="127.0.0.1", port=8001)  # Make sure to use a different port than profile_service

@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from profile_service.database.crud import get_user
 from profile_service.database.models import User as UserModel
 from profile_service.database import DATABASE_URL, SessionLocal
-from profile_service.queries.resolvers import query
+from profile_service.queries.resolvers.query import query
 
 @query.field("user")
 def resolve_user_query(obj, info, id: int):
