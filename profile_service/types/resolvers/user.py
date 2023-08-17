@@ -12,4 +12,4 @@ def resolve_email(obj, info):
 
 @user.field("individualId")
 def resolve_individual_id(obj, info):
-    return 12345
+    return obj["individualId"]

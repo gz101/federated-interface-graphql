@@ -12,4 +12,4 @@ def resolve_email(obj, info):
 
 @organization_member.field("organizationId")
 def resolve_organization_id(obj, info):
-    return "ORG-67890"
+    return obj["organizationId"]
