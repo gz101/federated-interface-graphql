@@ -1,4 +1,5 @@
-type User {
+type UserInterface @key(fields: "id") @interfaceObject {
     id: ID!
     contentMessage: String!
+    contentId: ID!
 }

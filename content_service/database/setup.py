@@ -9,7 +9,7 @@ def init_db():
     # Seeding User
     user = crud.get_user(db, user_id=1)
     if not user:
-        crud.create_user(db, user={"id": 1, "contentMessage": "hello"})
+        crud.create_user(db, user={"id": 1, "contentMessage": "hello", "contentId": 987})
 
     db.close()
 
