@@ -1,0 +1,4 @@
+interface UserInterface {
+    id: ID!
+    email: String!
+}

@@ -1,0 +1,3 @@
+extend type Query {
+    organizationMember(id: ID!): OrganizationMember
+}

@@ -1,0 +1,5 @@
+type OrganizationMember implements UserInterface {
+    id: ID!
+    email: String!
+    organizationId: ID!
+}

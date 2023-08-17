@@ -1,0 +1,5 @@
+type User implements UserInterface {
+    id: ID!
+    email: String!
+    individualId: Int!
+}
