@@ -1,6 +1,12 @@
 from fastapi import FastAPI
 from ariadne import load_schema_from_path, make_executable_schema
 from ariadne.asgi import GraphQL
+from profile_service.queries.resolvers.query import query
+from profile_service.queries.resolvers.user import resolve_user_query
+from profile_service.queries.resolvers.organization_member import resolve_organization_member_query
+
+query.set_field("user", resolve_user_query)
+query.set_field("organizationMember", resolve_organization_member_query)
 
 # Load GraphQL schemas
 base_query_schema = load_schema_from_path("profile_service/queries/schemas/query.graphql")
@@ -26,10 +32,9 @@ type_defs = "\n".join(
 from profile_service.types.resolvers.user_interface import user_interface
 from profile_service.types.resolvers.user import user
 from profile_service.types.resolvers.organization_member import organization_member
-from profile_service.queries.resolvers.query import query
 
 # Create executable schema
-schema = make_executable_schema(type_defs, [query, user_interface, user, organization_member])
+schema = make_executable_schema(type_defs, user_interface, user, organization_member, query)
 
 # FastAPI setup
 app = FastAPI()
